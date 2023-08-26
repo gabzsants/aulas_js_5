@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lendo todos os campos de um formulário</title>
+    <script>
+      function visualizar() {
+        let form = document.getElementById("f");
+        //alert(form.length)
+        for (let i = 0; i < form.length; i++) {
+          console.log(form.elements[i].value);
+        }
+      }
+      function mostrar() {
+        let form = document.getElementById("f");
+        let texto = "";
+        for (let i = 0; i < form.length; i++) {
+        texto += (form.elements[i].value) + "<br>";
+      }
+      document.getElementById("p1").innerHTML = texto;
+    }
+      function validar() {
+        let form = document.getElementById("f");
+        for (let i = 0; i < form.length; i++) {
+        if(form.elements[i].value.length ==0){
+        alert("O Campo" + form.elements[i].name + "não pode ser vazio");
+        break;  
+      }
+    }
+  }
+    </script>
+  </head>
+  <body>
+    <form id="f">
+      CPF: <input type="text" name="v1" value="A" /><br />
+      NOME: <input type="text" name="v2" value="B" /><br />
+      ENDEREÇO: <input type="text" name="v3" value="C" /><br />
+      Valor 4: <input type="text" name="v4" value="D" /><br />
+      Valor 5: <input type="text" name="v5" value="E" /><br />
+      Valor 6: <input type="text" name="v6" value="F" /><br />
+      Valor 7: <input type="text" name="v7" value="G" /><br />
+      Valor 8: <input type="text" name="v8" value="H" /><br />
+      Valor 9: <input type="text" name="v9" value="I" /><br />
+      Valor 10: <input type="text" name="v10" value="J" /><br />
+      <input type="button" value="mostrar" onclick="mostrar()" />
+      <input type="button" value="validar" onclick="validar()" />
+      <input type="button" value="visualizar" onclick="visualizar()" />
+    </form>
+    <p id="p1"></p>
+  </body>
+</html>
